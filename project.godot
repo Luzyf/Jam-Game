@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="You Are Not Alone"
+config/name="Jam Game"
 run/main_scene="res://Scenes/testLVL.tscn"
 config/icon="res://icon.png"
 
