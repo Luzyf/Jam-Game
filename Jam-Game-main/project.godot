@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Jam Game"
-run/main_scene="res://Scenes/testLVL.tscn"
+run/main_scene="res://Scenes/Level.tscn"
 config/icon="res://icon.png"
 
 [gui]
