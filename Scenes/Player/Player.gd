@@ -4,6 +4,8 @@ export var  speed = 200#walkingspeed
 export var bullet_speed = 1000
 var velocity = Vector2()
 
+onready var anim = $AnimatedSprite
+
 var bullet = preload("res://Scenes/Player/Bullet.tscn")# easy fire skript
 
 func _physics_process(_delta):
@@ -15,18 +17,25 @@ func _physics_process(_delta):
 		get_tree().get_root().add_child(bullet_instance)
 		
 	
-	look_at(get_global_mouse_position())#  player look to the mousposition
 
-	velocity = Vector2()# simple movmentskript
-	if Input.is_action_pressed("down"):# 
+	velocity = Vector2()
+	
+	if Input.is_action_pressed("down"):
+		anim.animation = "Walk Down"
 		velocity.y += speed
 	if Input.is_action_pressed("left"):
+		anim.animation = "Walk Left"
 		velocity.x -= speed
 	if Input.is_action_pressed("right"):
+		anim.animation = "Walk Right"
 		velocity.x += speed
 	if Input.is_action_pressed("up"):
+		anim.animation = "Walk Up"
 		velocity.y -= speed
-		
+	
+	if velocity.y == 0 && velocity.x == 0:
+		anim.animation = "Idle"
+	
 	move_and_slide(velocity)
 	
 	
