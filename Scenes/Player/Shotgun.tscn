@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Player/Weapon.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Player/Pistol.png" type="Texture" id=2]
+
+[node name="Shotgun" type="Node2D"]
+script = ExtResource( 1 )
+semi_auto = false
+bulletspread = 0.1
+
+[node name="end_of_weapon" type="Node2D" parent="."]
+
+[node name="firespeed" type="Timer" parent="."]
+one_shot = true
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
