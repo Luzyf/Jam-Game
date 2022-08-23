@@ -5,6 +5,7 @@
 
 [node name="Uzi" type="Node2D"]
 script = ExtResource( 1 )
+clip_size = 25
 
 [node name="end_of_weapon" type="Node2D" parent="."]
 
@@ -14,3 +15,6 @@ one_shot = true
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
+
+[node name="ReloadTime" type="Timer" parent="."]
+one_shot = true

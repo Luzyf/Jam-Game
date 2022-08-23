@@ -37,14 +37,21 @@ current = true
 [node name="Weaponmaster" type="Node2D" parent="."]
 position = Vector2( 32, 0 )
 
+[node name="Pistol" parent="Weaponmaster" instance=ExtResource( 5 )]
+burstspeed = 0.01
+
+[node name="Uzi" parent="Weaponmaster" instance=ExtResource( 4 )]
+semi_auto = false
+bulletspread = 0.1
+
 [node name="Shotgun" parent="Weaponmaster" instance=ExtResource( 6 )]
 bullet_speed = 1000
 semi_auto = true
 bulletspread = 0.5
 bullets = 10.0
 
-[node name="Uzi" parent="Weaponmaster" instance=ExtResource( 4 )]
-semi_auto = false
-bulletspread = 0.1
+[node name="Ammoniton" type="CanvasLayer" parent="."]
 
-[node name="Pistol" parent="Weaponmaster" instance=ExtResource( 5 )]
+[node name="RichTextLabel" type="RichTextLabel" parent="Ammoniton"]
+margin_right = 50.0
+margin_bottom = 40.0

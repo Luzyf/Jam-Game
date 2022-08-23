@@ -3,9 +3,9 @@
 [ext_resource path="res://Scenes/Player/Weapon.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player/Pistol.png" type="Texture" id=2]
 
-[node name="Weapon2" type="Node2D"]
-position = Vector2( -64, 0 )
+[node name="Pistol" type="Node2D"]
 script = ExtResource( 1 )
+clip_size = 11
 
 [node name="end_of_weapon" type="Node2D" parent="."]
 
@@ -15,3 +15,6 @@ one_shot = true
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
+
+[node name="ReloadTime" type="Timer" parent="."]
+one_shot = true

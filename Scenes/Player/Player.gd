@@ -15,12 +15,11 @@ var weapons: Array = []
 
 func _ready() :
 	weapons = $Weaponmaster.get_children()
-
 	for weapon in weapons:
 		weapon.hide()
-
 	current_weapon.show()
-
+	$Ammoniton/RichTextLabel.text = String (current_weapon.clip)+ "|" +String (current_weapon.reserve_ammo)
+	
 
 func get_current_weapon() -> Weapon:
 	return current_weapon
@@ -28,15 +27,18 @@ func get_current_weapon() -> Weapon:
 func switch_weapon(weapon: Weapon):
 	if weapon == current_weapon:
 		return
-
 	current_weapon.hide()
 	weapon.show()
 	current_weapon = weapon
+	$Ammoniton/RichTextLabel.text = String (current_weapon.clip) +"|" +  String (current_weapon.reserve_ammo)
 func _physics_process(_delta):
 	if  Input.is_action_pressed("fire") and !current_weapon.semi_auto:
 		current_weapon.shoot(rotation)
+		$Ammoniton/RichTextLabel.text = String (current_weapon.clip) +"|" +  String (current_weapon.reserve_ammo)
 	elif Input.is_action_just_pressed("fire") :#and current_weapon.semi_auto:
 		current_weapon.shoot(rotation)
+		  
+		$Ammoniton/RichTextLabel.text = String (current_weapon.clip)+"|" +  String (current_weapon.reserve_ammo)
 	look_at(get_global_mouse_position())#  player look to the mousposition
 
 	velocity = Vector2()# simple movmentskript
@@ -70,7 +72,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		switch_weapon(weapons[weapon_nummber])
 	elif event.is_action_released("weapon 1"):
 		if 0 <= weapons.size() -1:
-			switch_weapon(weapons[2])
+			switch_weapon(weapons[0])
 		
 	elif event.is_action_released("weapon 2"):
 		if 1 <= weapons.size() -1:

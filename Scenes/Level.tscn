@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Packs/postapo-lands-demo/32x32_DEMO.png" type="Texture" id=4]
 
 [sub_resource type="CanvasItemMaterial" id=3]
+light_mode = 2
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
