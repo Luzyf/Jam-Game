@@ -46,6 +46,7 @@ position = Vector2( 136, -60 )
 shape = SubResource( 1 )
 
 [node name="Background" type="Sprite" parent="."]
+visible = false
 scale = Vector2( 1000, 1000 )
 texture = ExtResource( 2 )
 
@@ -55,6 +56,7 @@ texture = ExtResource( 2 )
 position = Vector2( -974, 26 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0.0392157, 0.0352941, 0.0352941, 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
